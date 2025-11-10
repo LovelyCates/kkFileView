@@ -1,15 +1,22 @@
 package cn.keking.web.controller;
 
+import cn.keking.newPro.entity.FileInfo;
+import cn.keking.newPro.service.FileInfoService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  *  页面跳转
  * @author yudian-it
  * @date 2017/12/27
  */
-@Controller
+@RestController
 public class IndexController {
+
+    @Autowired
+    FileInfoService fileInfoService;
 
     @GetMapping( "/index")
     public String go2Index(){
@@ -36,5 +43,9 @@ public class IndexController {
         return "/main/index";
     }
 
+    @GetMapping("/fileInfo")
+    public FileInfo getFileInfo() {
+        return fileInfoService.getFileInfoById(1);
+    }
 
 }

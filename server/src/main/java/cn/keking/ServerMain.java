@@ -1,6 +1,7 @@
 package cn.keking;
 
 import org.apache.commons.lang3.StringUtils;
+import org.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,6 +15,7 @@ import org.springframework.util.StopWatch;
 @SpringBootApplication
 @EnableScheduling
 @ComponentScan(value = "cn.keking.*")
+@MapperScan(value = "cn.keking.newPro.mapper")  // 扫描 Mapper接口
 public class ServerMain {
 
     private static final Logger logger = LoggerFactory.getLogger(ServerMain.class);

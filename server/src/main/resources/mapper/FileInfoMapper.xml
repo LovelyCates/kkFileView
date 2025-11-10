@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.keking.newPro.mapper.FileInfoMapper">
+
+    <resultMap id="FileResultMap" type="cn.keking.newPro.entity.FileInfo">
+        <id column="FILE_ID" property="fileId" />
+        <result column="FILE_NAM" property="fileNam" />
+        <result column="FILE_MD5" property="fileMd5" />
+        <result column="FILE_TYP" property="fileTyp" />
+    </resultMap>
+
+    <select id="findFileInfoById" resultType="cn.keking.newPro.entity.FileInfo">
+        SELECT FILE_ID, FILE_NAM, FILE_MD5, FILE_TYP
+        FROM FILEINFO
+        WHERE FILE_ID = #{fileId}
+    </select>
+
+</mapper>
