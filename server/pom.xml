@@ -35,6 +35,15 @@
 
     <dependencies>
 
+        <!-- nacos -->
+        <!-- SpringCloud Alibaba Nacos -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+            <version>2022.0.0.0-RC2</version>
+        </dependency>
+
+
         <!-- redis缓存依赖 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
